@@ -87,7 +87,7 @@ if __name__ == "__main__":
     # default
     
     opt = ParameterFinenet(
-        ckp_dir="fine_network",
+        ckp_dir="comp_network",
         name=model_name,
         batchsize=batch_size,
         data_root=args.dataset,

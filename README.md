@@ -6,6 +6,7 @@ pip install -e .
 ```
 
 ### Pretrained models
+link https://pan.baidu.com/s/1Tov1WCrZnq0qpCz-ofxhWQ?pwd=hh4h with extraction code `hh4h` 
 comming soon
 
 ### datasets

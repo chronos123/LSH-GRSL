@@ -324,7 +324,7 @@ class CompressAutoEncoderWinAttnGeluSTE(nn.Module):
 
         assert d_range == 2, "other models are not provided"
 
-        self.ckp1 = "pretrain_models/best_valid_psnr_compress_net.pth"
+        self.ckp1 = "pretrain_models/pretrained_compnet.pth"
 
         self.output_nc = output_nc
         self.clamp = clamp
