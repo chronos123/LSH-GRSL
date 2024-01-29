@@ -172,8 +172,8 @@ class Cheng2020Attention(Cheng2020Anchor):
         )
 
 
-@register_model("model_cheng_anchor_win-attn5")
-class ChengResEncoderAnchorWinAttn(Cheng2020Anchor):
+@register_model("lsh")
+class LSH(Cheng2020Anchor):
     def __init__(self, N=128, finetune=False, norm=False, **kwargs):
         """
         N: 128/192 low/high bpp, number of channels

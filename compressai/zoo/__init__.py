@@ -36,7 +36,7 @@ from .image import (
     mbt2018,
     mbt2018_mean,
     model_balle_win_attn5,
-    model_cheng_anchor_win_attn5,
+    lsh,
 
 )
 from .pretrained import load_pretrained as load_state_dict
@@ -51,7 +51,7 @@ image_models = {
     "cheng2020-anchor": cheng2020_anchor,
     "cheng2020-attn": cheng2020_attn,
     "model_balle_win-attn5": model_balle_win_attn5,
-    "model_cheng_anchor_win-attn5": model_cheng_anchor_win_attn5,
+    "lsh": lsh,
 }
 
 video_models = {

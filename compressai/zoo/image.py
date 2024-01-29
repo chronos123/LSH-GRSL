@@ -37,7 +37,7 @@ from compressai.models import (
     JointAutoregressiveHierarchicalPriors,
     MeanScaleHyperprior,
     ScaleHyperprior,
-    ChengResEncoderAnchorWinAttn,
+    LSH,
 )
 
 from compressai.models.google import (
@@ -68,7 +68,7 @@ model_architectures = {
     "cheng2020-anchor": Cheng2020Anchor,
     "cheng2020-attn": Cheng2020Attention,
     "model_balle_win-attn5": HyperprioiorResEncoderWinAttn5,
-    "model_cheng_anchor_win-attn5": ChengResEncoderAnchorWinAttn,
+    "lsh": LSH,
 }
 
 root_url = "https://compressai.s3.amazonaws.com/models/v1"
@@ -485,7 +485,7 @@ def model_balle_win_attn5(quality, metric="mse", pretrained=False, progress=True
     )
 
     
-def model_cheng_anchor_win_attn5(quality, metric="mse", pretrained=False, progress=True, 
+def lsh(quality, metric="mse", pretrained=False, progress=True, 
                  finetune=False,
                  norm=False,
                  **kwargs):
