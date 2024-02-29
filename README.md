@@ -1,5 +1,5 @@
 
-### Environments
+## Set up environments
 
 Use the environment.yml file to create the python environment
 
@@ -8,18 +8,20 @@ conda env create -f environment.yml
 pip install -e .
 ```
 
-### Pretrained models
-The pretrained model is available on https://pan.baidu.com/s/1Tov1WCrZnq0qpCz-ofxhWQ?pwd=hh4h with extraction code `hh4h`. We provided both the cheng model and our LSH model. 
+## Use the pretrained model
+
+### Download pretrained models
+- The pretrained models are available on https://pan.baidu.com/s/1Tov1WCrZnq0qpCz-ofxhWQ?pwd=hh4h with extraction code `hh4h`. We provided both the cheng model and our LSH model. 
+
+- Download the pretrained model in the ckpt directory.
 
 ### datasets
 
 We used the dataset according to the article https://ieeexplore.ieee.org/abstract/document/10008891. The dataset is comming soon on https://github.com/dq0309/MIC-Dataset.
 
-### Get the compression results
+### Examples of using the pretrained models to get the compression results
 
-download the pretrained model in the ckpt directory
-
-- use our LSH model to compress the image, and get the result in the results folder
+- use our LSH model to compress the image, and get the result in the results folder.
 ```sh
 python examples/test.py checkpoint $pathToDataset -a lsh -p ckpt/PSNR/ours/3/checkpoint_best_loss.pth.tar -d results -o lsh_3.json
 ```
@@ -47,6 +49,10 @@ python bpg_encoding.py -d $pathToDataset
 python jpeg_encoding.py -d $pathToDataset
 ```
 
+## Train from scrath
+
+You can train our model with your own dataset with this guide.
+
 ### First train a structure extraction network
 
 ```sh
@@ -71,4 +77,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/train.py -m model_cheng_anchor_win-attn5 
 ```sh
 CUDA_VISIBLE_DEVICES=0 python examples/train.py -m model_cheng_anchor_win-attn5 -d $pathToDataset --batch-size 16 -lr 3e-4 --save --cuda --epoch 1000 --patch-size 256 256 --lambda 0.01 --test-batch-size 1 --metric ms_ssim
 ```
+
+## Citation
+
 
