@@ -1,3 +1,14 @@
+# Official code for Learned Structure-Based Hybrid Framework for Martian Image Compression
+
+https://ieeexplore.ieee.org/document/10296961?source=authoralert
+
+- Network architecture
+![](figs/fig2.png)
+
+
+- RD-performance on the Martain image dataset
+<img src="figs/fig3.png" style="zoom:50% text-align:center" />
+
 
 ## Set up environments
 
@@ -80,4 +91,15 @@ CUDA_VISIBLE_DEVICES=0 python examples/train.py -m model_cheng_anchor_win-attn5 
 
 ## Citation
 
-
+```bibtex
+@ARTICLE{10296961,
+  author={Li, Shengxi and Sun, Xiancheng and Xu, Mai and Jiang, Lai and Zou, Xin},
+  journal={IEEE Geoscience and Remote Sensing Letters}, 
+  title={Learned Structure-Based Hybrid Framework for Martian Image Compression}, 
+  year={2023},
+  volume={20},
+  number={},
+  pages={1-5},
+  keywords={Image coding;Image reconstruction;Standards;Transform coding;Image restoration;Convolution;Mars;Deep neural network (DNN);learning-based image compression;Martian image compression (MIC)},
+  doi={10.1109/LGRS.2023.3327687}}
+```
