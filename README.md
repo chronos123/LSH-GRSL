@@ -17,7 +17,35 @@ We used the dataset according to the article https://ieeexplore.ieee.org/abstrac
 
 ### Get the compression results
 
-comming soon
+download the pretrained model in the ckpt directory
+
+- use our LSH model to compress the image, and get the result in the results folder
+```sh
+python examples/test.py checkpoint $pathToDataset -a lsh -p ckpt/PSNR/ours/3/checkpoint_best_loss.pth.tar -d results -o lsh_3.json
+```
+
+- use cheng model to compress the image, and get the result in the results folder
+```sh
+python examples/test.py checkpoint $pathToDataset -a lsh -p ckpt/PSNR/cheng/3/checkpoint_best_loss.pth.tar -d results -o cheng_3.json
+```
+
+- the vvc_encoding.py can be used to compress the images with VVC
+
+```sh
+python vvc_encoding.py -d $pathToDataset -o $Outdir -q 26 28 30 
+```
+
+- the bpg_encoding.py can be used to compress the images with bpg
+
+```sh
+python bpg_encoding.py -d $pathToDataset
+```
+
+- the jpeg_encoding.py can be used to compress the images with jpeg2000
+
+```sh
+python jpeg_encoding.py -d $pathToDataset
+```
 
 ### First train a structure extraction network
 

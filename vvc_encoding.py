@@ -551,7 +551,7 @@ def calc_metrics(qp, args):
 
 
 def calc_all(args):
-    for qp in [28]:
+    for qp in args.qps:
         result = calc_metrics(qp, args)
         result = pd.Series(result).to_frame().T
         print(result)
@@ -604,10 +604,18 @@ if __name__ == "__main__":
         type=str,
         required=True
     )
+
+    parser.add_argument(
+        "-q",
+        "--qps",
+        type=int,
+        nargs="+",
+        required=True
+    )
     
     args = parser.parse_args()
     
-    for qp in [28]:
+    for qp in args.qps:
         vvc_encoding(qp, args)
 
     calc_all(args)

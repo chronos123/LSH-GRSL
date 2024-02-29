@@ -56,7 +56,6 @@ from torchvision import transforms
 from multiprocessing import Pool, Lock
 
 import compressai
-from compressai.datasets.image import KfoldImageFolder5
 from compressai.zoo import image_models as pretrained_models
 from compressai.zoo.image import model_architectures as architectures
 import util
@@ -633,7 +632,7 @@ def main(argv):
     )
 
     if args.kfold != -1:
-        filepaths = KfoldImageFolder5(args.dataset, k=args.kfold, state="test").get_paths()
+        raise NotImplementedError()
     else:
         filepaths = collect_images(args.dataset)
     if len(filepaths) == 0:
@@ -743,22 +742,26 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    i = 0
-    pbar = tqdm.tqdm(total=386, desc="test")
-    normalize = False
-    multi = True
-    save = False
-    # multi = bool(int(input("multi is: 0-false, 1-true ")))
-    # save = bool(int(input("save is : 0-false, 1-true ")))
-    
-    # n_threads = 30 
-    
-    print(f"normalize: {normalize}\nmulti: {multi}\nsave: {save}")
-    if save:
-        subprocess.check_call(
-            "rm -f ./test_one/recon_image/*", 
-            shell=True,
-            )
-    
-    main(sys.argv[1:])
+    try:
+        i = 0
+        pbar = tqdm.tqdm(total=386, desc="test")
+        normalize = False
+        multi = True
+        save = False
+        # multi = bool(int(input("multi is: 0-false, 1-true ")))
+        # save = bool(int(input("save is : 0-false, 1-true ")))
+        
+        # n_threads = 30 
+        
+        print(f"normalize: {normalize}\nmulti: {multi}\nsave: {save}")
+        if save:
+            subprocess.check_call(
+                "rm -f ./test_one/recon_image/*", 
+                shell=True,
+                )
+        
+        main(sys.argv[1:])
+        os.system("rm temp*")
+    except KeyboardInterrupt:
+        os.system("rm temp*")
     
