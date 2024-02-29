@@ -7,7 +7,7 @@ https://ieeexplore.ieee.org/document/10296961?source=authoralert
 
 
 - RD-performance on the Martain image dataset
-<img src="figs/fig3.png" style="zoom:50% text-align:center" />
+<img src="figs/fig3.png" style="zoom:30% text-align:center" />
 
 
 ## Set up environments
