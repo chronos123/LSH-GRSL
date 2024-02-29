@@ -2,10 +2,6 @@
 
 https://ieeexplore.ieee.org/document/10296961?source=authoralert
 
-- Network architecture
-![](figs/fig2.png)
-
-
 - RD-performance on the Martain image dataset
 <img src="figs/fig3.png" style="zoom:20%" />
 
