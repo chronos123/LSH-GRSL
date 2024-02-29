@@ -51,7 +51,7 @@ python jpeg_encoding.py -d $pathToDataset
 
 ## Train from scrath
 
-You can train our model with your own dataset with this guide.
+You can train our model with your own dataset with this guide. 
 
 ### First train a structure extraction network
 

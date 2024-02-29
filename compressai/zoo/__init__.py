@@ -35,7 +35,6 @@ from .image import (
     cheng2020_attn,
     mbt2018,
     mbt2018_mean,
-    model_balle_win_attn5,
     lsh,
 
 )
@@ -50,7 +49,6 @@ image_models = {
     "mbt2018": mbt2018,
     "cheng2020-anchor": cheng2020_anchor,
     "cheng2020-attn": cheng2020_attn,
-    "model_balle_win-attn5": model_balle_win_attn5,
     "lsh": lsh,
 }
 

@@ -40,9 +40,6 @@ from compressai.models import (
     LSH,
 )
 
-from compressai.models.google import (
-    HyperprioiorResEncoderWinAttn5,
-)
 
 from .pretrained import load_pretrained
 
@@ -67,7 +64,6 @@ model_architectures = {
     "mbt2018": JointAutoregressiveHierarchicalPriors,
     "cheng2020-anchor": Cheng2020Anchor,
     "cheng2020-attn": Cheng2020Attention,
-    "model_balle_win-attn5": HyperprioiorResEncoderWinAttn5,
     "lsh": LSH,
 }
 
@@ -473,18 +469,6 @@ def cheng2020_attn(quality, metric="mse", pretrained=False, progress=True, **kwa
     )
 
 
-def model_balle_win_attn5(quality, metric="mse", pretrained=False, progress=True, 
-                 finetune=False,
-                 norm=False,
-                 **kwargs):
-    if metric not in ("mse", "ms-ssim"):
-        raise ValueError(f'Invalid metric "{metric}"')
-    
-    return _load_model(
-        "model_balle_win-attn5", metric, quality, pretrained, progress, finetune, norm, **kwargs
-    )
-
-    
 def lsh(quality, metric="mse", pretrained=False, progress=True, 
                  finetune=False,
                  norm=False,
